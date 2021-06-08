@@ -2,7 +2,7 @@
 Atividades para nivelamento de conhecimento sobre o básico do python na empresa WLC Soluções
 
 # Dependências
-- xlrd==2.0.1
+- xlrd==1.2.0
 
 # Instalação
 1. Crie um ambiente virtual:
