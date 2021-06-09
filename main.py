@@ -9,3 +9,4 @@ RECORDS_WORKSHEET = DATA.sheet_by_index(0)
 ACCOUNTS_WORKSHEET = DATA.sheet_by_index(1)
 
 print(gets.get_accounts_data(ACCOUNTS_WORKSHEET))
+print(gets.get_records_data(DATA, RECORDS_WORKSHEET))

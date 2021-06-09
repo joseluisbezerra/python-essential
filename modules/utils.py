@@ -23,5 +23,5 @@ def find_or_create_error_logs_directory():
 
 def create_log_error(worksheet, id_row, id_col):
     logs = open(find_or_create_error_logs_directory(), 'a', encoding="utf-8")
-    logs.write(f"Célula da linha {id_row} e coluna {id_col} referente ao campo {worksheet.row_values(0)[id_col]} na planilha {worksheet.name} está vázia, toda a linha será ignorada;\n")
+    logs.write(f"Célula da linha {id_row + 1} e coluna {id_col + 1} referente ao campo {worksheet.row_values(0)[id_col]} na planilha {worksheet.name} está vázia, toda a linha será ignorada;\n")
     logs.close()
