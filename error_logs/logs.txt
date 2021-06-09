@@ -1,3 +1,0 @@
-Célula da linha 5 e coluna 2 referente ao campo Valor na planilha registros está vázia, toda a linha será ignorada;
-Célula da linha 11 e coluna 4 referente ao campo Conta na planilha registros está vázia, toda a linha será ignorada;
-Célula da linha 12 e coluna 4 referente ao campo Conta na planilha registros está vázia, toda a linha será ignorada;

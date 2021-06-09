@@ -36,3 +36,14 @@ def get_records_data(data, worksheet):
             continue
         data_list.append(tuple(data_validate))
     return data_list
+
+def get_logs_data():
+    data_list = list()
+    try:
+        logs = open(utils.find_or_create_error_logs_directory(), 'r', encoding="utf-8")
+    except FileNotFoundError:
+        return False
+    for log in logs.readlines():
+        data_list.append(log)
+    return tuple(data_list)
+    
