@@ -15,6 +15,7 @@ def main():
     while True:
         BALANCE_PEOPLE = 1
         BALANCE_ACCOUNT = 2
+        BALANCE_DATE = 3
         LOG_ERRORS = 4
         EXIT = 5
 
@@ -33,6 +34,9 @@ def main():
         elif response == BALANCE_ACCOUNT:
             os.system('cls' if os.name == 'nt' else 'clear')
             show.show_balance_accounts(ACCOUNTS, RECORDS)
+        elif response == BALANCE_DATE:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            show.show_balance_dates(ACCOUNTS, RECORDS)
         elif response == LOG_ERRORS:
             os.system('cls' if os.name == 'nt' else 'clear')
             show.show_log_errors(LOGS)

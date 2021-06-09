@@ -34,25 +34,30 @@ def show_balance_people(accounts, records):
 
 def show_balance_accounts(accounts, records):
     accounts_list = list()
-    accounts_types_list = list()
     for account in accounts:
         accounts_list.append((account[2], 0))
-        accounts_types_list.append((account[0], account[2]))
 
-    accounts_type = dict(accounts_types_list)
     counts_balance = dict(accounts_list)
 
     for record in records:
-        if record[3] == accounts_type['Conta Corrente']:
-            counts_balance['CCA'] += record[1]
-        elif record[3] == accounts_type['Conta Investimentos']:
-            counts_balance['CIA'] += record[1]
-        else:
-            counts_balance['CPB'] += record[1]
+        counts_balance[record[3]] += record[1]
 
     for key in counts_balance:
         print(f'Saldo de todas as contas {key}: {counts_balance[key]}')
 
+
+def show_balance_dates(accounts, records):
+    date_list = list()
+    for record in records:
+        date_list.append((record[0], 0))
+
+    date_balance = dict(date_list)
+
+    for record in records:
+        date_balance[record[0]] += record[1]
+
+    for key in date_balance:
+        print(f'Saldo de todas as contas {key}: {date_balance[key]}')
 
 def show_log_errors(logs):
     if logs:
