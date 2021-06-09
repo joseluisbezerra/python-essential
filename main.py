@@ -13,6 +13,8 @@ def main():
     LOGS = get.get_logs_data()
 
     while True:
+        BALANCE_PEOPLE = 1
+        BALANCE_ACCOUNT = 2
         LOG_ERRORS = 4
         EXIT = 5
 
@@ -25,10 +27,15 @@ def main():
             print('\033[;1mInsira um valor válido!\033[0;0m\n')
             continue
 
-        if response == LOG_ERRORS:
+        if response == BALANCE_PEOPLE:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            show.show_balance_people(ACCOUNTS, RECORDS)
+        elif response == BALANCE_ACCOUNT:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            show.show_balance_accounts(ACCOUNTS, RECORDS)
+        elif response == LOG_ERRORS:
             os.system('cls' if os.name == 'nt' else 'clear')
             show.show_log_errors(LOGS)
-
         elif response == EXIT:
             utils.clear_log_errors()
             print('Saindo...')

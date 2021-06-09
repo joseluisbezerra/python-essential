@@ -1,6 +1,7 @@
 import datetime, xlrd
 from modules import utils
 
+
 def get_accounts_data(worksheet):
     data_list = list()
     for id_row in range(1, worksheet.nrows):
@@ -14,6 +15,7 @@ def get_accounts_data(worksheet):
             continue
         data_list.append(tuple(worksheet.row_values(id_row)))
     return data_list
+
 
 def get_records_data(data, worksheet):
     data_list = list()
@@ -36,6 +38,7 @@ def get_records_data(data, worksheet):
             continue
         data_list.append(tuple(data_validate))
     return data_list
+
 
 def get_logs_data():
     data_list = list()
