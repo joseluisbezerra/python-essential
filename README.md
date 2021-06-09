@@ -1,5 +1,5 @@
 # Python Essential
-Atividades para nivelamento de conhecimento sobre o básico do python na empresa WLC Soluções
+Atividade para nivelamento de conhecimento sobre o básico do python na empresa WLC Soluções
 
 # Dependências
 - xlrd==1.2.0
@@ -13,4 +13,8 @@ python3 -m venv venv
 3. Instale as dependências:
 ```
 (venv) pip install -r requirements.txt
+```
+4. Teste o script:
+```
+(venv) python main.py
 ```

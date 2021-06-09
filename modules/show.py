@@ -31,6 +31,7 @@ def show_balance_people(accounts, records):
     for key in people_balance:
         print(f'Saldo da {key}: {people_balance[key]}')
 
+
 def show_balance_accounts(accounts, records):
     accounts_list = list()
     accounts_types_list = list()
@@ -51,6 +52,7 @@ def show_balance_accounts(accounts, records):
 
     for key in counts_balance:
         print(f'Saldo de todas as contas {key}: {counts_balance[key]}')
+
 
 def show_log_errors(logs):
     if logs:
