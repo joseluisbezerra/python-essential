@@ -13,37 +13,36 @@ def show_header():
 
 
 def show_balance_people(accounts, records):
+    people_accounts = dict()
     people_list = list()
-    accounts_types_list = list()
     for account in accounts:
-        people_list.append((account[1], 0))
-        accounts_types_list.append((account[0], account[2]))
-
-    accounts_type = dict(accounts_types_list)
-    people_balance = dict(people_list)
-
-    for record in records:
-        if record[3] == accounts_type['Conta Corrente'] or record[3] == accounts_type['Conta Investimentos']:
-            people_balance['Pessoa A'] += record[1]
+        if account[1] in people_accounts.keys():
+            people_accounts[account[1]].append(account[2])
         else:
-            people_balance['Pessoa B'] += record[1]
+            people_accounts[account[1]] = [account[2]]
+        people_list.append((account[1], 0))
 
-    for key in people_balance:
-        print(f'Saldo da {key}: {people_balance[key]}')
+    people_balance = dict(people_list)
+    for record in records:
+        for person in people_accounts:
+            if record[3] in people_accounts[person]:
+                people_balance[person] += record[1]
 
+    for person in people_balance:
+        print(f'Saldo da {person}: {people_balance[person]}')
 
 def show_balance_accounts(accounts, records):
     accounts_list = list()
     for account in accounts:
         accounts_list.append((account[2], 0))
 
-    counts_balance = dict(accounts_list)
+    accounts_balance = dict(accounts_list)
 
     for record in records:
-        counts_balance[record[3]] += record[1]
+        accounts_balance[record[3]] += record[1]
 
-    for key in counts_balance:
-        print(f'Saldo de todas as contas {key}: {counts_balance[key]}')
+    for account in accounts_balance:
+        print(f'Saldo de todas as contas {account}: {accounts_balance[account]}')
 
 
 def show_balance_dates(records):
@@ -56,8 +55,8 @@ def show_balance_dates(records):
     for record in records:
         date_balance[record[0]] += record[1]
 
-    for key in date_balance:
-        print(f'Saldo de todas as operações das contas no {key}: {date_balance[key]}')
+    for date in date_balance:
+        print(f'Saldo de todas as operações das contas no {date}: {date_balance[date]}')
 
 def show_log_errors(logs):
     if logs:
