@@ -36,7 +36,7 @@ def main():
             show.show_balance_accounts(ACCOUNTS, RECORDS)
         elif response == BALANCE_DATE:
             os.system('cls' if os.name == 'nt' else 'clear')
-            show.show_balance_dates(ACCOUNTS, RECORDS)
+            show.show_balance_dates(RECORDS)
         elif response == LOG_ERRORS:
             os.system('cls' if os.name == 'nt' else 'clear')
             show.show_log_errors(LOGS)

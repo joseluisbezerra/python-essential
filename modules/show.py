@@ -46,7 +46,7 @@ def show_balance_accounts(accounts, records):
         print(f'Saldo de todas as contas {key}: {counts_balance[key]}')
 
 
-def show_balance_dates(accounts, records):
+def show_balance_dates(records):
     date_list = list()
     for record in records:
         date_list.append((record[0], 0))
@@ -57,7 +57,7 @@ def show_balance_dates(accounts, records):
         date_balance[record[0]] += record[1]
 
     for key in date_balance:
-        print(f'Saldo de todas as contas {key}: {date_balance[key]}')
+        print(f'Saldo de todas as operações das contas no {key}: {date_balance[key]}')
 
 def show_log_errors(logs):
     if logs:
