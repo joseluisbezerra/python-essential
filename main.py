@@ -36,7 +36,7 @@ def main():
             show.show_balance_accounts(ACCOUNTS, RECORDS)
         elif response == BALANCE_DATE:
             os.system('cls' if os.name == 'nt' else 'clear')
-            show.show_balance_dates(RECORDS)
+            show.show_balance_dates(ACCOUNTS, RECORDS)
         elif response == LOG_ERRORS:
             os.system('cls' if os.name == 'nt' else 'clear')
             show.show_log_errors(LOGS)
@@ -46,7 +46,7 @@ def main():
             break
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print('\033[;1mInsira um valor válido!\033[0;0m\n')
+            print('\033[;1mInsira uma das opções!\033[0;0m\n')
             continue
 
 main()
