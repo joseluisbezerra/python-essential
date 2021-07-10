@@ -14,9 +14,6 @@ Um script que pegue as informações de um arquivo de planilha e mostre:
 - Um registro deve ter uma data válida;
 - Todas as ocorrências acima devem ser registradas em um txt. O txt deve ter o número da linha que está com problema, qual informação está faltando e todas as informações que foram lidas da linha.
 
-# Dependências
-- xlrd==1.2.0
-
 # Instalação
 1. Crie um ambiente virtual:
 ```
