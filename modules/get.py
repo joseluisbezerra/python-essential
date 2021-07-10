@@ -1,4 +1,5 @@
-import datetime, xlrd
+import datetime
+import xlrd
 from modules import utils
 
 
@@ -29,7 +30,8 @@ def get_records_data(data, worksheet):
                 errors += 1
             else:
                 if id_col == ID_COL_DATE:
-                    col_validate = datetime.datetime(*xlrd.xldate_as_tuple(col, data.datemode)).strftime("%d/%m/%y")
+                    col_validate = datetime.datetime(
+                        *xlrd.xldate_as_tuple(col, data.datemode)).strftime("%d/%m/%y")
                     col = col_validate
                 data_validate.append(col)
         if errors:
@@ -41,10 +43,10 @@ def get_records_data(data, worksheet):
 def get_logs_data():
     log_list = list()
     try:
-        logs = open(utils.find_or_create_error_logs_directory(), 'r', encoding="utf-8")
+        logs = open(utils.find_or_create_error_logs_directory(),
+                    'r', encoding="utf-8")
     except FileNotFoundError:
         return False
     for log in logs.readlines():
         log_list.append(log)
     return tuple(log_list)
-    
