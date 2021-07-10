@@ -1,6 +1,8 @@
-import xlrd, os
+import xlrd
+import os
 
 from modules import utils, get, show
+
 
 def main():
 
@@ -48,5 +50,6 @@ def main():
             os.system('cls' if os.name == 'nt' else 'clear')
             print('\033[;1mInsira uma das opções!\033[0;0m\n')
             continue
+
 
 main()

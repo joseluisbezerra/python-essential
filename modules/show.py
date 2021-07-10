@@ -1,8 +1,3 @@
-import os
-
-from modules import utils
-
-
 def show_header():
     print('\033[;1mBanco da WLC Soluções\033[0;0m')
     print('1 - Mostrar saldo total por pessoa;')
@@ -35,6 +30,7 @@ def show_balance_people(accounts, records):
     else:
         print('\033[;1mNão há contas na planilha!\033[0;0m')
 
+
 def show_balance_accounts(accounts, records):
     if accounts:
         accounts_list = list()
@@ -48,7 +44,8 @@ def show_balance_accounts(accounts, records):
 
         print('\033[;1mLista do saldo total por conta:\033[0;0m')
         for account in accounts_balance:
-            print(f'Saldo de todas as contas {account}: {accounts_balance[account]}')
+            print(
+                f'Saldo de todas as contas {account}: {accounts_balance[account]}')
     else:
         print('\033[;1mNão há contas na planilha!\033[0;0m')
 
@@ -67,7 +64,8 @@ def show_balance_dates(accounts, records):
 
             print('\033[;1mLista do total de todas as contas por data:\033[0;0m')
             for date in date_balance:
-                print(f'Saldo de todas as operações das contas no {date}: {date_balance[date]}')
+                print(
+                    f'Saldo de todas as operações das contas no {date}: {date_balance[date]}')
         else:
             print('\033[;1mNão há registros na planilha!\033[0;0m')
     else:
